@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fontium · Electricistas</title><style>
+:root{--bg:#faf7f0;--ink:#1f1d1a;--mut:#6b655c;--line:#e3ddd0;--ac:#1f5f4a;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:1.9rem}h2{font-size:1.45rem}h3{font-size:1.12rem}
+.proto{background:var(--ink);color:var(--bg);font-size:.75rem;text-align:center;padding:5px 10px}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:2}
+.logo{font-family:Georgia,serif;font-size:1.35rem;color:var(--ink);text-decoration:none}
+nav a{color:var(--mut);text-decoration:none;font-size:.85rem;margin-left:10px}nav a.on{color:var(--ac);border-bottom:2px solid var(--ac)}
+main{max-width:680px;margin:0 auto;padding:20px 18px 40px}.scr{display:none}.scr.on{display:block}
+.k{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);font-weight:600;margin:0}
+.lead{color:var(--mut);font-size:1.03rem}.mut{color:var(--mut);font-size:.88rem}
+.btn{display:inline-block;background:var(--ac);color:#fff;border:0;border-radius:6px;padding:12px 18px;font-size:1rem;cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--ac);border:1px solid var(--ac)}.btn.w{width:100%;text-align:center}.btn:disabled{opacity:.4}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0}
+.of{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;cursor:pointer;font-size:1rem;margin:8px 0;color:var(--ink)}
+.of b{font-family:Georgia,serif;font-weight:normal;font-size:1.12rem;display:block}.of span{color:var(--mut);font-size:.86rem}
+.of:hover,.of.sel{border-color:var(--ac)}.of.sel{box-shadow:inset 3px 0 0 var(--ac)}
+.ad{border:1px dashed #b9b19f;border-radius:6px;padding:14px;text-align:center;color:#9a927f;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin:18px 0}
+.tag{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:20px;border:1px solid var(--mut);color:var(--mut)}
+.warn{border-left:3px solid #a3482b;background:#fbf1ec;padding:10px 12px;font-size:.85rem;margin:12px 0}
+.sec{margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+.bar{height:4px;background:var(--line);border-radius:2px;margin:10px 0 18px}.bar i{display:block;height:100%;background:var(--ac);border-radius:2px}
+.step{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;margin:10px 0}
+.step input{width:22px;height:22px;accent-color:var(--ac);flex:none;margin-top:2px}
+.step.done h3{text-decoration:line-through;color:var(--mut)}.step p{margin:4px 0;font-size:.92rem}
+.meta{font-size:.8rem;color:var(--mut)}.meta a{color:var(--ac)}
+.chat{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.m{max-width:88%;padding:10px 13px;border-radius:10px;font-size:.94rem;white-space:pre-line}
+.m.u{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:2px}.m.b{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:2px}
+.m.s{align-self:flex-start;background:transparent;border:1px solid var(--ac);color:var(--ink);font-size:.86rem}
+.sug{display:flex;flex-wrap:wrap;gap:6px}.sug button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 12px;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.calc label{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}
+.calc input{width:130px;padding:8px;border:1px solid var(--line);border-radius:6px;font-size:1rem;text-align:right}
+.out{font-family:Georgia,serif;font-size:1.5rem;color:var(--ac)}
+.back{color:var(--mut);font-size:.9rem;cursor:pointer;background:none;border:0;padding:0}
+textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit;min-height:80px}
+footer{text-align:center;color:var(--mut);font-size:.75rem;padding:20px;border-top:1px solid var(--line)}
+
+.q{display:none}.q.on{display:block}.pr{background:#f3efe5;border:1px solid var(--line);border-radius:6px;padding:12px;font:.86rem/1.45 ui-monospace,Menlo,monospace;white-space:pre-wrap;margin:8px 0}
+.ba{display:grid;gap:10px}@media(min-width:620px){.ba{grid-template-columns:1fr 1fr}}.ba .card{margin:0}
+ul.no li{margin:4px 0}.n{font-family:Georgia,serif;font-size:1.6rem;color:var(--ac);min-width:28px}
+.ej{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#a3482b;border:1px solid #a3482b;border-radius:3px;padding:1px 6px;margin-left:6px}
+</style></head><body>
+<div class="proto">Prototipo para opinar · no es un producto real</div>
+<header><a class="logo" href="../">Fontium</a><nav><a href="../medicos/">Médicos</a><a href="../electricistas/" class="on">Electricistas</a></nav></header>
+<main>
+<section><p class="k">Guía para electricistas</p><h1>Presupuestá en 10 minutos, no en una noche</h1><p class="lead">Una guía paso a paso para electricistas que trabajan por su cuenta y nunca usaron IA. Desde el celular, entre obra y obra.</p><a class="btn w" href="#diag">Hacé el diagnóstico (2 minutos)</a>
+<div class="sec"><p class="k">Dónde se te va el tiempo</p><div class="card"><h3>Presupuestos</h3><p class="mut" style="margin:0">Armarlos de noche, a mano, y que el cliente no los entienda.</p></div><div class="card"><h3>Cómputo de materiales</h3><p class="mut" style="margin:0">Metros de cable, cajas, térmicas: siempre falta algo.</p></div><div class="card"><h3>Mensajes a clientes</h3><p class="mut" style="margin:0">WhatsApp para explicar demoras, cobrar o pasar precio.</p></div><div class="card"><h3>Normativa y seguridad</h3><p class="mut" style="margin:0">Explicar por qué hace falta disyuntor o puesta a tierra sin sonar caro.</p></div><div class="card"><h3>Monotributo</h3><p class="mut" style="margin:0">Facturar, categoría, vencimientos.</p></div></div></section>
+<section class="sec" id="diag"><p class="k">Diagnóstico</p><h2>Contame cómo trabajás</h2><div class="bar"><i id="bar" style="width:0%"></i></div><div class="q on" data-i="0"><p class="mut">Pregunta 1 de 5</p><h3>¿Usás alguna IA hoy?</h3><button class="of" data-v="Pago ChatGPT Plus"><b>Pago ChatGPT Plus</b></button><button class="of" data-v="Pago Gemini o Claude"><b>Pago Gemini o Claude</b></button><button class="of" data-v="Uso la gratis de alguna"><b>Uso la gratis de alguna</b></button><button class="of" data-v="No uso ninguna"><b>No uso ninguna</b></button></div><div class="q" data-i="1"><p class="mut">Pregunta 2 de 5</p><h3>¿Qué te saca más tiempo?</h3><button class="of" data-v="Presupuestos"><b>Presupuestos</b></button><button class="of" data-v="Cómputo de materiales"><b>Cómputo de materiales</b></button><button class="of" data-v="Mensajes a clientes"><b>Mensajes a clientes</b></button><button class="of" data-v="Explicar normativa"><b>Explicar normativa</b></button></div><div class="q" data-i="2"><p class="mut">Pregunta 3 de 5</p><h3>¿Qué trabajos hacés más?</h3><button class="of" data-v="Domiciliario"><b>Domiciliario</b></button><button class="of" data-v="Comercios"><b>Comercios</b></button><button class="of" data-v="Obra nueva"><b>Obra nueva</b></button><button class="of" data-v="Reparaciones y urgencias"><b>Reparaciones y urgencias</b></button></div><div class="q" data-i="3"><p class="mut">Pregunta 4 de 5</p><h3>¿Cómo pasás presupuestos hoy?</h3><button class="of" data-v="Por WhatsApp"><b>Por WhatsApp</b></button><button class="of" data-v="En papel"><b>En papel</b></button><button class="of" data-v="Planilla o PDF"><b>Planilla o PDF</b></button><button class="of" data-v="De palabra"><b>De palabra</b></button></div><div class="q" data-i="4"><p class="mut">Pregunta 5 de 5</p><h3>¿Estás en el monotributo?</h3><button class="of" data-v="Sí"><b>Sí</b></button><button class="of" data-v="No"><b>No</b></button><button class="of" data-v="No sé bien en qué categoría"><b>No sé bien en qué categoría</b></button></div>
+<div class="q" id="res"><div class="card"><h3>Tu punto de partida</h3><p id="restxt"></p><button class="btn o" id="again">Volver a empezar</button></div></div></section>
+<section class="sec" id="plan"><p class="k">Tu plan</p><h2>Tres pasos, una semana</h2><p class="mut">Copiás el prompt, lo pegás en tu IA y completás lo que está entre corchetes.</p><div class="step"><div class="n">1</div><div style="flex:1"><h3>Presupuesto claro para el cliente</h3><p class="mut">Le pasás tus notas de la visita y te devuelve un presupuesto prolijo para mandar.</p><div class="pr" id="p0">Sos asistente de un electricista matriculado en Argentina. Con estas notas de visita armá un presupuesto para el cliente: trabajo a realizar en ítems, materiales (sin precios, los pongo yo), mano de obra [MONTO], plazo, validez 7 días y forma de pago. Lenguaje simple, de vos, sin tecnicismos.
+
+Notas: [pegá acá]</div><button class="btn o cp" data-t="p0">Copiar prompt</button></div></div><div class="step"><div class="n">2</div><div style="flex:1"><h3>Cómputo de materiales</h3><p class="mut">Lista de materiales para revisar antes de ir al corralón.</p><div class="pr" id="p1">Armame una lista de materiales para esta instalación: [describí ambientes, bocas, tomas, distancias aproximadas]. Separá cables por sección, cañería, cajas, protecciones y accesorios. Sumá un 10% de margen en cable. Marcá con [VERIFICAR] todo lo que dependa de la reglamentación AEA o del criterio del matriculado.</div><button class="btn o cp" data-t="p1">Copiar prompt</button></div></div><div class="step"><div class="n">3</div><div style="flex:1"><h3>Explicar seguridad sin asustar</h3><p class="mut">Mensaje para que el cliente entienda por qué conviene el disyuntor o la puesta a tierra.</p><div class="pr" id="p2">Escribí un mensaje de WhatsApp, máximo 8 líneas, de vos y sin emojis, para explicarle a un cliente sin conocimientos por qué su instalación necesita [disyuntor / puesta a tierra / cambio de cableado]. Usá un ejemplo cotidiano, sin exagerar riesgos, y cerrá ofreciendo pasarle el presupuesto. No cites normas con número: yo las verifico.</div><button class="btn o cp" data-t="p2">Copiar prompt</button></div></div></section>
+<section class="sec"><p class="k">Ejemplo</p><h2>Presupuesto por WhatsApp</h2><div class="ba"><div class="card"><p class="k" style="color:var(--mut)">Antes</p><p>hola, cambio tablero + 2 termicas + disy + 3 bocas, 180 mil todo, materiales aparte. avisame</p></div><div class="card" style="border-color:var(--ac)"><p class="k">Después</p><p style="white-space:pre-line">Hola Marta, te paso el presupuesto:
+1. Cambio de tablero principal
+2. 2 llaves térmicas y 1 disyuntor diferencial (te protege de descargas)
+3. 3 bocas nuevas en cocina
+Mano de obra: $180.000. Materiales aparte, te paso la lista.
+Plazo: 1 día. Validez: 7 días.</p></div></div></section>
+<section class="sec"><p class="k">Qué NO cargar en la IA</p><div class="warn"><b>Datos de clientes y cosas que la IA no puede decidir por vos.</b><ul class="no"><li>Dirección exacta, DNI o datos bancarios del cliente</li><li>Fotos de la casa donde se vea la dirección o la gente</li><li>Cálculos de sección o protecciones: la IA orienta, firma el matriculado</li><li>Normas con número: verificalas en la reglamentación AEA o tu ente</li></ul></div><p class="mut">La IA se equivoca e inventa. Todo lo que tenga números, normas o criterio profesional lo revisás vos.</p></section>
+<section class="sec"><p class="k">Taller en vivo</p><h2>Taller para electricistas</h2><p>Dos horas por Zoom o presencial, máximo 10. Salís con la IA en el celular y tus plantillas de presupuesto y mensajes armadas.</p><div class="card"><p style="margin:0"><b>ARS 30.000 por persona</b><span class="ej">Precio de ejemplo</span></p><p class="mut">Seña ARS 5.000 para reservar lugar. Si no se llena el cupo, te la devolvemos.</p><button class="btn w" onclick="alert('Prototipo: acá iría el link de pago de la seña.')">Reservar con seña</button></div></section>
+</main><footer>Fontium · prototipo 2026</footer>
+<script>
+const R={"Pago ChatGPT Plus": "Usá ChatGPT, no hace falta pagar otra.", "Pago Gemini o Claude": "Seguí con la que pagás; los prompts sirven igual.", "Uso la gratis de alguna": "Con la versión gratis alcanza para todo el plan.", "_": "Empezá gratis con Gemini (gemini.google.com) con tu cuenta de Google: no pagás nada y anda desde el celular."};const qs=[...document.querySelectorAll('.q[data-i]')],ans=[];
+qs.forEach((q,i)=>q.querySelectorAll('.of').forEach(b=>b.onclick=()=>{ans[i]=b.dataset.v;q.classList.remove('on');document.getElementById('bar').style.width=((i+1)/qs.length*100)+'%';
+if(qs[i+1])qs[i+1].classList.add('on');else{const ia=ans[0];document.getElementById('restxt').textContent=(R[ia]||R._)+' Arrancá por el paso 1 del plan: '+(ans[1]||'')+'.';document.getElementById('res').classList.add('on')}}));
+document.getElementById('again').onclick=()=>{document.getElementById('res').classList.remove('on');qs[0].classList.add('on');document.getElementById('bar').style.width='0%'};
+document.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(document.getElementById(b.dataset.t).innerText);b.textContent='Copiado';setTimeout(()=>b.textContent='Copiar prompt',1500)});
+</script></body></html>

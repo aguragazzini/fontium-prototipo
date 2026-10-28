@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fontium · Médicos</title><style>
+:root{--bg:#faf7f0;--ink:#1f1d1a;--mut:#6b655c;--line:#e3ddd0;--ac:#1f5f4a;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:1.9rem}h2{font-size:1.45rem}h3{font-size:1.12rem}
+.proto{background:var(--ink);color:var(--bg);font-size:.75rem;text-align:center;padding:5px 10px}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:2}
+.logo{font-family:Georgia,serif;font-size:1.35rem;color:var(--ink);text-decoration:none}
+nav a{color:var(--mut);text-decoration:none;font-size:.85rem;margin-left:10px}nav a.on{color:var(--ac);border-bottom:2px solid var(--ac)}
+main{max-width:680px;margin:0 auto;padding:20px 18px 40px}.scr{display:none}.scr.on{display:block}
+.k{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);font-weight:600;margin:0}
+.lead{color:var(--mut);font-size:1.03rem}.mut{color:var(--mut);font-size:.88rem}
+.btn{display:inline-block;background:var(--ac);color:#fff;border:0;border-radius:6px;padding:12px 18px;font-size:1rem;cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--ac);border:1px solid var(--ac)}.btn.w{width:100%;text-align:center}.btn:disabled{opacity:.4}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0}
+.of{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;cursor:pointer;font-size:1rem;margin:8px 0;color:var(--ink)}
+.of b{font-family:Georgia,serif;font-weight:normal;font-size:1.12rem;display:block}.of span{color:var(--mut);font-size:.86rem}
+.of:hover,.of.sel{border-color:var(--ac)}.of.sel{box-shadow:inset 3px 0 0 var(--ac)}
+.ad{border:1px dashed #b9b19f;border-radius:6px;padding:14px;text-align:center;color:#9a927f;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin:18px 0}
+.tag{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:20px;border:1px solid var(--mut);color:var(--mut)}
+.warn{border-left:3px solid #a3482b;background:#fbf1ec;padding:10px 12px;font-size:.85rem;margin:12px 0}
+.sec{margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+.bar{height:4px;background:var(--line);border-radius:2px;margin:10px 0 18px}.bar i{display:block;height:100%;background:var(--ac);border-radius:2px}
+.step{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;margin:10px 0}
+.step input{width:22px;height:22px;accent-color:var(--ac);flex:none;margin-top:2px}
+.step.done h3{text-decoration:line-through;color:var(--mut)}.step p{margin:4px 0;font-size:.92rem}
+.meta{font-size:.8rem;color:var(--mut)}.meta a{color:var(--ac)}
+.chat{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.m{max-width:88%;padding:10px 13px;border-radius:10px;font-size:.94rem;white-space:pre-line}
+.m.u{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:2px}.m.b{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:2px}
+.m.s{align-self:flex-start;background:transparent;border:1px solid var(--ac);color:var(--ink);font-size:.86rem}
+.sug{display:flex;flex-wrap:wrap;gap:6px}.sug button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 12px;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.calc label{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}
+.calc input{width:130px;padding:8px;border:1px solid var(--line);border-radius:6px;font-size:1rem;text-align:right}
+.out{font-family:Georgia,serif;font-size:1.5rem;color:var(--ac)}
+.back{color:var(--mut);font-size:.9rem;cursor:pointer;background:none;border:0;padding:0}
+textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit;min-height:80px}
+footer{text-align:center;color:var(--mut);font-size:.75rem;padding:20px;border-top:1px solid var(--line)}
+
+.q{display:none}.q.on{display:block}.pr{background:#f3efe5;border:1px solid var(--line);border-radius:6px;padding:12px;font:.86rem/1.45 ui-monospace,Menlo,monospace;white-space:pre-wrap;margin:8px 0}
+.ba{display:grid;gap:10px}@media(min-width:620px){.ba{grid-template-columns:1fr 1fr}}.ba .card{margin:0}
+ul.no li{margin:4px 0}.n{font-family:Georgia,serif;font-size:1.6rem;color:var(--ac);min-width:28px}
+.ej{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:#a3482b;border:1px solid #a3482b;border-radius:3px;padding:1px 6px;margin-left:6px}
+</style></head><body>
+<div class="proto">Prototipo para opinar · no es un producto real</div>
+<header><a class="logo" href="../">Fontium</a><nav><a href="../medicos/" class="on">Médicos</a><a href="../electricistas/">Electricistas</a></nav></header>
+<main>
+<section><p class="k">Guía para médicos</p><h1>Menos papeles, más consulta</h1><p class="lead">Una guía paso a paso para médicos con consultorio propio que nunca usaron IA, o la usaron dos veces y la dejaron. Sin curso, sin jerga.</p><a class="btn w" href="#diag">Hacé el diagnóstico (2 minutos)</a>
+<div class="sec"><p class="k">Dónde se te va el tiempo</p><div class="card"><h3>Resúmenes de historia clínica</h3><p class="mut" style="margin:0">Ordenar evolución y antecedentes te come la tarde.</p></div><div class="card"><h3>Indicaciones claras</h3><p class="mut" style="margin:0">El paciente se va y no entendió cómo tomar lo que le diste.</p></div><div class="card"><h3>Turnos y mensajes</h3><p class="mut" style="margin:0">WhatsApp de pacientes a toda hora, cancelaciones, recordatorios.</p></div><div class="card"><h3>Facturación y monotributo</h3><p class="mut" style="margin:0">Facturas a obras sociales, categoría, vencimientos.</p></div></div></section>
+<section class="sec" id="diag"><p class="k">Diagnóstico</p><h2>Contame cómo trabajás</h2><div class="bar"><i id="bar" style="width:0%"></i></div><div class="q on" data-i="0"><p class="mut">Pregunta 1 de 5</p><h3>¿Usás alguna IA hoy?</h3><button class="of" data-v="Pago ChatGPT Plus"><b>Pago ChatGPT Plus</b></button><button class="of" data-v="Pago Gemini o Claude"><b>Pago Gemini o Claude</b></button><button class="of" data-v="Uso la gratis de alguna"><b>Uso la gratis de alguna</b></button><button class="of" data-v="No uso ninguna"><b>No uso ninguna</b></button></div><div class="q" data-i="1"><p class="mut">Pregunta 2 de 5</p><h3>¿Qué te saca más tiempo?</h3><button class="of" data-v="Resúmenes de historia clínica"><b>Resúmenes de historia clínica</b></button><button class="of" data-v="Explicar indicaciones"><b>Explicar indicaciones</b></button><button class="of" data-v="Mensajes y turnos"><b>Mensajes y turnos</b></button><button class="of" data-v="Facturación"><b>Facturación</b></button></div><div class="q" data-i="2"><p class="mut">Pregunta 3 de 5</p><h3>¿Cómo atendés?</h3><button class="of" data-v="Consultorio propio"><b>Consultorio propio</b></button><button class="of" data-v="Obras sociales y prepagas"><b>Obras sociales y prepagas</b></button><button class="of" data-v="Particulares"><b>Particulares</b></button><button class="of" data-v="Mixto"><b>Mixto</b></button></div><div class="q" data-i="3"><p class="mut">Pregunta 4 de 5</p><h3>¿Desde dónde lo usarías?</h3><button class="of" data-v="Celular"><b>Celular</b></button><button class="of" data-v="Computadora"><b>Computadora</b></button><button class="of" data-v="Las dos"><b>Las dos</b></button></div><div class="q" data-i="4"><p class="mut">Pregunta 5 de 5</p><h3>¿Cuánto tiempo le podés dar?</h3><button class="of" data-v="15 minutos por día"><b>15 minutos por día</b></button><button class="of" data-v="Una hora por semana"><b>Una hora por semana</b></button><button class="of" data-v="Un sábado"><b>Un sábado</b></button></div>
+<div class="q" id="res"><div class="card"><h3>Tu punto de partida</h3><p id="restxt"></p><button class="btn o" id="again">Volver a empezar</button></div></div></section>
+<section class="sec" id="plan"><p class="k">Tu plan</p><h2>Tres pasos, una semana</h2><p class="mut">Copiás el prompt, lo pegás en tu IA y completás lo que está entre corchetes.</p><div class="step"><div class="n">1</div><div style="flex:1"><h3>Resumen de historia clínica (anonimizada)</h3><p class="mut">Pegás tus notas sin nombre, DNI ni afiliado. La IA ordena; el criterio es tuyo.</p><div class="pr" id="p0">Sos asistente de un médico clínico argentino. Te paso notas de consulta ANONIMIZADAS de &quot;Paciente A, [edad] años&quot;. Ordenalas en: motivo de consulta, antecedentes, evolución, estudios pendientes y plan ya decidido por mí. No agregues diagnósticos ni tratamientos que yo no haya escrito. Marcá con [VERIFICAR] lo que sea ambiguo.
+
+Notas: [pegá acá]</div><button class="btn o cp" data-t="p0">Copiar prompt</button></div></div><div class="step"><div class="n">2</div><div style="flex:1"><h3>Indicaciones en lenguaje simple</h3><p class="mut">Lo que ya indicaste, explicado para que el paciente lo entienda y lo pueda mandar por WhatsApp.</p><div class="pr" id="p1">Reescribí estas indicaciones que ya decidí para un paciente sin formación médica, en castellano rioplatense, frases cortas, de vos, máximo 10 líneas. No cambies dosis, horarios ni medicamentos. Agregá al final: &quot;Ante cualquier duda, consultame&quot;.
+
+Indicaciones: [pegá acá]</div><button class="btn o cp" data-t="p1">Copiar prompt</button></div></div><div class="step"><div class="n">3</div><div style="flex:1"><h3>Mensajes de turnos listos</h3><p class="mut">Plantillas para confirmar, reprogramar y recordar turnos.</p><div class="pr" id="p2">Armame 5 mensajes cortos de WhatsApp para mi consultorio: confirmar turno, recordatorio 24 hs antes, reprogramación, cancelación por mi parte y pedido de llegar con estudios. Tono cordial y profesional, de vos, sin emojis. Dejá [DÍA], [HORA] y [DIRECCIÓN] como campos.</div><button class="btn o cp" data-t="p2">Copiar prompt</button></div></div></section>
+<section class="sec"><p class="k">Ejemplo</p><h2>Indicaciones para el paciente</h2><div class="ba"><div class="card"><p class="k" style="color:var(--mut)">Antes</p><p>Amoxicilina 875 c/12 hs x 7 d. Ibuprofeno 400 c/8 hs SOS. Control 10 d.</p></div><div class="card" style="border-color:var(--ac)"><p class="k">Después</p><p style="white-space:pre-line">Tomá 1 comprimido de amoxicilina a la mañana y otro a la noche, durante 7 días, aunque te sientas mejor.
+Si tenés dolor o fiebre, podés tomar 1 ibuprofeno, con al menos 8 horas entre uno y otro.
+Volvé a control en 10 días.
+Ante cualquier duda, consultame.</p></div></div></section>
+<section class="sec"><p class="k">Qué NO cargar en la IA</p><div class="warn"><b>Datos de pacientes: nunca. Son datos sensibles (Ley 25.326) y hay secreto profesional.</b><ul class="no"><li>Nombre, DNI, teléfono, dirección o número de afiliado</li><li>Fotos, estudios o historias clínicas completas con datos identificables</li><li>Usá siempre &quot;Paciente A, 45 años&quot; en lugar del nombre</li><li>Diagnósticos y conductas: la IA no los decide, vos sí</li></ul></div><p class="mut">La IA se equivoca e inventa. Todo lo que tenga números, normas o criterio profesional lo revisás vos.</p></section>
+<section class="sec"><p class="k">Taller en vivo</p><h2>Taller para médicos con consultorio</h2><p>Dos horas por Zoom, máximo 10 médicos. Salís con la IA instalada en tu celular y los tres pasos funcionando con casos tuyos (anonimizados).</p><div class="card"><p style="margin:0"><b>ARS 50.000 por persona</b><span class="ej">Precio de ejemplo</span></p><p class="mut">Seña ARS 10.000 para reservar lugar. Si no se llena el cupo, te la devolvemos.</p><button class="btn w" onclick="alert('Prototipo: acá iría el link de pago de la seña.')">Reservar con seña</button></div></section>
+</main><footer>Fontium · prototipo 2026</footer>
+<script>
+const R={"Pago ChatGPT Plus": "Usá ChatGPT, no hace falta pagar otra.", "Pago Gemini o Claude": "Seguí con la que pagás; los prompts sirven igual.", "Uso la gratis de alguna": "Con la versión gratis alcanza para todo el plan.", "_": "Empezá gratis con Gemini (gemini.google.com) con tu cuenta de Google: no pagás nada y anda desde el celular."};const qs=[...document.querySelectorAll('.q[data-i]')],ans=[];
+qs.forEach((q,i)=>q.querySelectorAll('.of').forEach(b=>b.onclick=()=>{ans[i]=b.dataset.v;q.classList.remove('on');document.getElementById('bar').style.width=((i+1)/qs.length*100)+'%';
+if(qs[i+1])qs[i+1].classList.add('on');else{const ia=ans[0];document.getElementById('restxt').textContent=(R[ia]||R._)+' Arrancá por el paso 1 del plan: '+(ans[1]||'')+'.';document.getElementById('res').classList.add('on')}}));
+document.getElementById('again').onclick=()=>{document.getElementById('res').classList.remove('on');qs[0].classList.add('on');document.getElementById('bar').style.width='0%'};
+document.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(document.getElementById(b.dataset.t).innerText);b.textContent='Copiado';setTimeout(()=>b.textContent='Copiar prompt',1500)});
+</script></body></html>
