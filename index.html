@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="es-AR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fontium · prototipo</title>
+<meta name="description" content="Fontium te guía para usar la IA en algo concreto que mejore tu vida o tu negocio. Prototipo.">
+<style>
+:root{--bg:#faf7f0;--ink:#1f1d1a;--mut:#6b655c;--line:#e3ddd0;--ac:#1f5f4a;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:normal;line-height:1.2;margin:.2em 0 .5em}
+h1{font-size:1.9rem}h2{font-size:1.45rem}h3{font-size:1.12rem}
+.proto{background:var(--ink);color:var(--bg);font-size:.75rem;text-align:center;padding:5px 10px}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:2}
+.logo{font-family:Georgia,serif;font-size:1.35rem;color:var(--ink);text-decoration:none}
+nav a{color:var(--mut);text-decoration:none;font-size:.85rem;margin-left:10px}nav a.on{color:var(--ac);border-bottom:2px solid var(--ac)}
+main{max-width:680px;margin:0 auto;padding:20px 18px 40px}.scr{display:none}.scr.on{display:block}
+.k{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);font-weight:600;margin:0}
+.lead{color:var(--mut);font-size:1.03rem}.mut{color:var(--mut);font-size:.88rem}
+.btn{display:inline-block;background:var(--ac);color:#fff;border:0;border-radius:6px;padding:12px 18px;font-size:1rem;cursor:pointer;text-decoration:none}
+.btn.o{background:transparent;color:var(--ac);border:1px solid var(--ac)}.btn.w{width:100%;text-align:center}.btn:disabled{opacity:.4}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin:12px 0}
+.of{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;cursor:pointer;font-size:1rem;margin:8px 0;color:var(--ink)}
+.of b{font-family:Georgia,serif;font-weight:normal;font-size:1.12rem;display:block}.of span{color:var(--mut);font-size:.86rem}
+.of:hover,.of.sel{border-color:var(--ac)}.of.sel{box-shadow:inset 3px 0 0 var(--ac)}
+.ad{border:1px dashed #b9b19f;border-radius:6px;padding:14px;text-align:center;color:#9a927f;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;margin:18px 0}
+.tag{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:20px;border:1px solid var(--mut);color:var(--mut)}
+.warn{border-left:3px solid #a3482b;background:#fbf1ec;padding:10px 12px;font-size:.85rem;margin:12px 0}
+.sec{margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+.bar{height:4px;background:var(--line);border-radius:2px;margin:10px 0 18px}.bar i{display:block;height:100%;background:var(--ac);border-radius:2px}
+.step{display:flex;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px;margin:10px 0}
+.step input{width:22px;height:22px;accent-color:var(--ac);flex:none;margin-top:2px}
+.step.done h3{text-decoration:line-through;color:var(--mut)}.step p{margin:4px 0;font-size:.92rem}
+.meta{font-size:.8rem;color:var(--mut)}.meta a{color:var(--ac)}
+.chat{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.m{max-width:88%;padding:10px 13px;border-radius:10px;font-size:.94rem;white-space:pre-line}
+.m.u{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:2px}.m.b{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:2px}
+.m.s{align-self:flex-start;background:transparent;border:1px solid var(--ac);color:var(--ink);font-size:.86rem}
+.sug{display:flex;flex-wrap:wrap;gap:6px}.sug button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 12px;font-size:.85rem;cursor:pointer;color:var(--ink)}
+.calc label{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:6px 0;font-size:.9rem}
+.calc input{width:130px;padding:8px;border:1px solid var(--line);border-radius:6px;font-size:1rem;text-align:right}
+.out{font-family:Georgia,serif;font-size:1.5rem;color:var(--ac)}
+.back{color:var(--mut);font-size:.9rem;cursor:pointer;background:none;border:0;padding:0}
+textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit;min-height:80px}
+footer{text-align:center;color:var(--mut);font-size:.75rem;padding:20px;border-top:1px solid var(--line)}
+</style></head><body>
+<div class="proto">Prototipo para probar la idea · nada de esto es un servicio real todavía</div>
+<header><a class="logo" href="#inicio">Fontium</a><nav><a href="#inicio" data-n="inicio">Inicio</a><a href="#plan" data-n="plan">Mi plan</a><a href="#asistentes" data-n="asistentes">Asistentes</a><a href="#guias" data-n="guias">Guías</a></nav></header>
+<main>
+
+<section class="scr" id="s-inicio">
+<p class="k">Para cualquiera, sin saber de tecnología</p>
+<h1>La IA, aplicada a algo concreto de tu vida.</h1>
+<p class="lead">Respondés unas preguntas, Fontium te arma un plan de pocos pasos y te acompaña con asistentes que ya saben de monotributo, precios, gastos y clientes.</p>
+<h2 class="sec">¿Quién sos?</h2>
+<div id="perfiles"></div>
+<p class="mut">Tarda 2 minutos. No pedimos mail ni datos personales.</p>
+<div class="ad">Espacio publicitario</div>
+<h2>Cómo funciona</h2>
+<div class="card"><b>1. Diagnóstico.</b> <span class="mut">7 preguntas sobre qué te come tiempo, en qué se te va la plata y qué querés mejorar.</span></div>
+<div class="card"><b>2. Tu plan.</b> <span class="mut">De 3 a 5 pasos concretos, con cuánto tarda cada uno.</span></div>
+<div class="card"><b>3. Asistentes.</b> <span class="mut">Te ayudan a hacer cada paso, con calculadoras y lenguaje simple.</span></div>
+<p><button class="btn o w" onclick="go('opinion')">¿Lo usarías? Contanos</button></p>
+</section>
+
+<section class="scr" id="s-diagnostico"><div id="diag"></div></section>
+<section class="scr" id="s-plan"><div id="planbox"></div></section>
+
+<section class="scr" id="s-asistentes">
+<p class="k">Asistentes</p><h1>Sirven para todos</h1>
+<p class="lead">Cada uno resuelve un tema que tiene cualquiera que trabaja o lleva una casa.</p>
+<div id="alist"></div>
+</section>
+<section class="scr" id="s-asistente"><div id="abox"></div></section>
+
+<section class="scr" id="s-guias">
+<p class="k">Orientar · gratis</p><h1>Guías para arrancar</h1>
+<div id="glist"></div>
+</section>
+<section class="scr" id="s-guia"><div id="gbox"></div></section>
+
+<section class="scr" id="s-opinion">
+<p class="k">Tu opinión</p><h1>¿Lo usarías?</h1>
+<p class="lead">Es un prototipo y tu respuesta define si se construye. Son 3 preguntas.</p>
+<div class="card"><b>¿Usarías Fontium?</b><div class="sug" style="margin-top:8px" data-g="usa"><button>Sí</button><button>Tal vez</button><button>No</button></div></div>
+<div class="card"><b>¿Cuánto pagarías por mes por los asistentes?</b><div class="sug" style="margin-top:8px" data-g="paga"><button>$0, solo gratis</button><button>$2.990</button><button>$4.990</button></div></div>
+<div class="card"><b>¿Qué le cambiarías o qué te faltó?</b><textarea id="com" placeholder="Escribí lo que quieras"></textarea></div>
+<button class="btn w" onclick="guardarOp()">Guardar mi opinión</button>
+<div id="opok" style="display:none"><p class="mut">Guardado en este celular. Si querés, mandáselo a Agus:</p><a class="btn o w" id="wa" target="_blank" rel="noopener">Mandarle mi opinión a Agus por WhatsApp</a></div>
+</section>
+
+<div class="warn">Fontium es un prototipo. No es asesoramiento contable, legal ni médico. Los montos y categorías de monotributo son de ejemplo: confirmalos en ARCA o con tu contador.</div>
+</main>
+<footer>Fontium · prototipo 2026 · <a href="#opinion" style="color:var(--ac)">¿Lo usarías?</a></footer>
+
+<script>
+const $=s=>document.querySelector(s);
+const LS={get:(k,d)=>{try{return JSON.parse(localStorage.getItem('fontium_'+k))??d}catch(e){return d}},set:(k,v)=>localStorage.setItem('fontium_'+k,JSON.stringify(v))};
+
+const PERF={
+ auto:{n:'Trabajo por mi cuenta',d:'Profesional u oficio: médico, contador, electricista, peluquera…'},
+ negocio:{n:'Tengo un negocio o comercio',d:'Almacén, local, emprendimiento, venta online'},
+ casa:{n:'Llevo la casa y la familia',d:'Organizar gastos, compras, trámites y la semana'},
+ empleado:{n:'Soy empleado',d:'Quiero rendir mejor en el trabajo o hacer algo extra'}
+};
+// preguntas: [id, texto, opciones[[valor,texto]], perfiles (vacío = todos)]
+const Q=[
+ ['oficio','¿A qué te dedicás?',[['salud','Salud (médico, kinesiólogo, psicólogo)'],['contable','Números o leyes (contador, abogado)'],['oficio','Oficio (electricista, plomero, gasista)'],['servicio','Servicios (peluquería, estética, clases)']],['auto']],
+ ['rubro','¿Qué tipo de negocio tenés?',[['local','Local a la calle'],['online','Vendo por redes o online'],['gastro','Comida o gastronomía'],['servicio','Servicios']],['negocio']],
+ ['hogar','¿Cuántos son en casa?',[['1','Vivo solo/a'],['2','Somos 2'],['chicos','Hay chicos'],['grande','Familia grande o adultos mayores a cargo']],['casa']],
+ ['tiempo','¿Qué te come más tiempo?',{auto:[['msj','Contestar WhatsApp y mensajes'],['papeles','Facturar, papeles y trámites'],['presu','Hacer presupuestos'],['agenda','Organizar la agenda']],negocio:[['msj','Contestar consultas de clientes'],['stock','Stock y pedidos'],['redes','Redes sociales'],['papeles','Facturas y papeles']],casa:[['compras','Planificar comidas y compras'],['tramites','Trámites (obra social, escuela, servicios)'],['org','Organizar la semana de todos'],['cuentas','Pagar y controlar cuentas']],empleado:[['mails','Mails y reuniones'],['informes','Informes y planillas'],['org','Ordenarme con las tareas'],['aprender','Aprender cosas nuevas']]}],
+ ['plata','¿En qué sentís que se te va la plata?',{_:[['nose','No sé bien en qué se me va'],['precios','Cobro poco o no sé cuánto cobrar'],['impuestos','Impuestos y monotributo'],['fijos','Gastos fijos y servicios']],casa:[['nose','No sé bien en qué se me va'],['super','Supermercado'],['servicios','Servicios y suscripciones'],['deudas','Tarjeta y cuotas']],empleado:[['nose','No sé bien en qué se me va'],['tarjeta','Tarjeta y cuotas'],['extra','Quiero un ingreso extra'],['ahorro','No logro ahorrar']]}],
+ ['mono','¿Cómo estás con el monotributo?',[['ok','Al día y tranquilo'],['duda','Al día, pero no sé si estoy en la categoría correcta'],['atras','Atrasado o sin facturar'],['no','No soy monotributista']],['auto','negocio']],
+ ['meta','¿Qué querés mejorar primero?',{_:[['clientes','Conseguir más clientes'],['ganar','Ganar más por lo mismo'],['tiempo','Tener más tiempo libre'],['orden','Tener todo en orden']],casa:[['ahorrar','Ahorrar todos los meses'],['tiempo','Tener más tiempo libre'],['orden','Tener todo en orden'],['extra','Hacer un ingreso extra desde casa']],empleado:[['tiempo','Rendir más en menos tiempo'],['ascenso','Crecer o cambiar de trabajo'],['extra','Hacer algo por mi cuenta'],['ahorrar','Ordenar mi plata']]}],
+ ['ia','¿Cuánto usaste la IA (ChatGPT, Gemini…)?',[['0','Nunca, no sé por dónde arrancar'],['1','La probé un par de veces'],['2','La uso a veces'],['3','La uso seguido']]],
+ ['horas','¿Cuánto tiempo le podés dedicar por semana?',[['1','Menos de 1 hora'],['2','1 a 3 horas'],['3','Más de 3 horas']]]
+];
+function preguntas(p){return Q.filter(q=>!q[3]||q[3].includes(p)).map(q=>{let o=q[2];if(!Array.isArray(o))o=o[p]||o._;return{id:q[0],t:q[1],o}})}
+
+const AS={
+ mono:{n:'Monotributo',d:'Categoría, recategorización y facturación',
+  chat:[['u','Facturé $9.800.000 en los últimos 12 meses. ¿Estoy en la categoría correcta?'],['b','Con $9,8 millones en 12 meses, en la tabla de ejemplo te correspondería la categoría D (hasta $11.000.000). Si hoy estás en C, en la próxima recategorización te toca subir.\n\nLo que te conviene hacer:\n1. Sumar lo facturado de los últimos 12 meses (lo ves en "Mis comprobantes" de ARCA).\n2. Revisarlo en enero y julio, que es cuando se recategoriza.\n3. Si estás cerca del tope, ordenar las facturas antes de fin de mes.'],['s','En simple: el monotributo tiene escalones según cuánto cobrás en el año. Si cobrás más, pasás al escalón de arriba y pagás una cuota un poco más alta.']],
+  sug:{'¿Cuándo me recategorizo?':'Dos veces por año, en enero y en julio, mirando lo que facturaste en los últimos 12 meses. Te puedo avisar unos días antes.','¿Cómo hago una factura?':'Entrás a ARCA con tu clave fiscal, elegís "Comprobantes en línea", generás una factura C, completás los datos del cliente y el monto. Te armo una guía paso a paso con capturas.','¿Qué pasa si me paso?':'Si superás el tope de la categoría más alta, quedás excluido del monotributo y pasás a responsable inscripto. Por eso conviene vigilarlo antes de llegar.'},calc:'mono'},
+ precio:{n:'Costos y precios',d:'Cuánto cobrar por hora, por trabajo o por producto',
+  chat:[['u','Soy electricista. ¿Cuánto tendría que cobrar la hora?'],['b','Hagamos la cuenta al revés: primero lo que necesitás ganar, después las horas que de verdad podés facturar.\n\nSi querés llevarte $1.200.000 por mes, tenés $250.000 de gastos (nafta, herramientas, monotributo) y facturás unas 100 horas (el resto se te va en traslados y presupuestos), tu hora tendría que estar en unos $14.500.\n\nProbá con tus números en la calculadora de abajo.'],['s','En simple: no todas las horas que trabajás las cobrás. Por eso la hora que cobrás tiene que ser más cara que "lo que quiero ganar dividido las horas".']],
+  sug:{'¿Y si cobro por trabajo?':'Estimá cuántas horas lleva, multiplicalo por tu precio por hora y sumale materiales y un 10% por imprevistos. Así no perdés plata si el trabajo se complica.','¿Cómo aviso que aumento?':'Te propongo este mensaje: "Hola, te cuento que desde el 1° del mes que viene actualizo mis precios. Los trabajos ya presupuestados quedan con el precio anterior. Gracias por confiar." ¿Lo ajustamos a tu estilo?'},calc:'hora'},
+ gastos:{n:'Gastos y presupuesto',d:'De la casa o del negocio: dónde se va la plata y cuánto ahorrar',
+  chat:[['u','Cobramos $1.800.000 entre los dos y a fin de mes no queda nada.'],['b','Pasa muchísimo. Te propongo tres cosas para esta semana:\n1. Anotar los gastos fijos: alquiler, servicios, colegio, prepaga.\n2. Revisar suscripciones y débitos automáticos. En promedio aparecen 2 o 3 que nadie usa.\n3. Ponerle un tope semanal al supermercado en vez de uno mensual.\n\nCargá tus números en la calculadora y te digo cuánto te queda libre.'],['s','En simple: primero miramos qué gastos no se pueden tocar, y después buscamos dónde se escapa la plata sin que te des cuenta.']],
+  sug:{'Armame una lista de compras barata':'Te armo un menú de 7 días para 4 personas con lo que está en oferta esta semana y una lista agrupada por góndola. ¿Hay algo que no coman?','¿Cuánto debería ahorrar?':'Una regla simple: apartar al menos el 10% apenas cobrás, antes de gastar. Si hoy no llegás, empezá con 5% y subilo de a poco.'},calc:'gastos'},
+ tiempo:{n:'Eficiencia y tiempo',d:'Organizar la semana y automatizar mensajes',
+  chat:[['u','Me paso 2 horas por día contestando lo mismo por WhatsApp.'],['b','Eso se arregla en una tarde. Las preguntas que más se repiten suelen ser horarios, precios, zona y medios de pago.\n\n1. Activá WhatsApp Business (es gratis).\n2. Te escribo las respuestas rápidas para esas 4 preguntas.\n3. Configurás un mensaje de bienvenida con la info básica.\n\nCon eso, la mayoría deja de preguntar lo mismo.'],['s','En simple: dejás escritas las respuestas una sola vez, y después las mandás con un toque.']],
+  sug:{'Escribime las respuestas':'Horarios: "Atiendo de lunes a viernes de 9 a 18 y sábados de 9 a 13." Precios: "La visita sale $X y se descuenta si hacemos el trabajo." Zona: "Trabajo en Córdoba capital y alrededores." Pago: "Efectivo, transferencia o Mercado Pago." ¿Los adapto a lo tuyo?','Organizame la semana':'Contame qué tenés fijo (trabajo, chicos, médico) y te armo una semana tipo con bloques, incluyendo un rato para papeles y otro libre.'}},
+ clientes:{n:'Conseguir clientes',d:'Redes, WhatsApp y reseñas en Google',
+  chat:[['u','Tengo una peluquería en el barrio y quiero más clientas.'],['b','Lo que más rinde para un negocio de barrio, en este orden:\n1. Perfil de Google Maps completo, con fotos y horarios. Es gratis y es donde te buscan.\n2. Pedir reseñas: a cada clienta contenta le mandás un link. Con 20 reseñas buenas ya subís.\n3. Un posteo por semana con un antes y después.\n\n¿Querés que te escriba el mensaje para pedir reseñas?'],['s','En simple: la gente elige mirando las estrellas y las fotos en Google. Conseguir reseñas es lo más barato y lo que más clientes trae.']],
+  sug:{'Sí, el mensaje de reseñas':'"Hola Caro, gracias por venir hoy. Si te gustó cómo quedó, ¿me dejarías una reseña acá? Me ayuda un montón: [link]. ¡Te espero la próxima!"','Ideas para posteos':'Semana 1: antes y después. Semana 2: un consejo para cuidar el color. Semana 3: presentá a tu equipo. Semana 4: una promo para días flojos.'}},
+ tramites:{n:'Trámites y papeles',d:'Qué pedir, dónde y cómo, sin vueltas',
+  chat:[['u','Tengo que dar de baja un servicio de cable y no me dejan por teléfono.'],['b','Desde 2020 las empresas tienen que ofrecer un "botón de baja" en su web, igual de fácil que la contratación.\n\n1. Buscá "botón de baja" en la página de la empresa.\n2. Guardá el número de trámite que te dan.\n3. Si no lo encontrás o no te dan la baja, podés hacer el reclamo en Defensa del Consumidor.\n\n¿Te escribo el mensaje de reclamo?'],['s','En simple: tienen la obligación de dejarte darte de baja por internet, sin llamar.']],
+  sug:{'Sí, escribime el reclamo':'"Solicito la baja del servicio, cliente N° ___, conforme al botón de baja. No pude realizarla por la web el día __/__. Pido confirmación por escrito y que no se generen nuevos cargos."','¿Qué papeles guardo?':'Una carpeta (en papel o en el celular) con: recibos de sueldo o facturas, impuestos pagados, servicios de los últimos 12 meses y garantías. Te armo la lista según tu caso.'}}
+};
+const AREF={msj:'tiempo',agenda:'tiempo',org:'tiempo',mails:'tiempo',informes:'tiempo',aprender:'tiempo',redes:'clientes',stock:'gastos',compras:'gastos',cuentas:'gastos',papeles:'mono',tramites:'tramites',presu:'precio'};
+
+const GUIAS=[
+ ['La IA explicada sin palabras raras','4 min','Qué es, qué hace bien, qué hace mal y por qué no reemplaza a un profesional.'],
+ ['Tu primera charla con ChatGPT o Gemini','5 min','Cómo pedirle las cosas para que te conteste algo útil: contexto, ejemplo y formato.'],
+ ['Monotributo: cómo saber si te pasás de categoría','8 min','Cuentas de ejemplo con lo facturado en 12 meses. Datos ilustrativos.'],
+ ['El presupuesto de la casa en 20 minutos','6 min','Una planilla simple con la ayuda de la IA, para ver en qué se va la plata.'],
+ ['WhatsApp Business con respuestas automáticas','7 min','Para dejar de contestar lo mismo todo el día.'],
+ ['Qué datos NO pasarle nunca a una IA','3 min','Claves, datos de pacientes o clientes, números de tarjeta.']
+];
+
+/* Router */
+function go(h){location.hash=h}
+function route(){const h=(location.hash.slice(1)||'inicio').split('/');let s=h[0];
+ if(s==='diagnostico')renderDiag(h[1]);if(s==='plan')renderPlan();if(s==='asistentes')renderAList();if(s==='asistente')renderA(h[1]);if(s==='guias')renderG();if(s==='guia')renderGuia(+h[1]);
+ if(!$('#s-'+s))s='inicio';document.querySelectorAll('.scr').forEach(e=>e.classList.toggle('on',e.id==='s-'+s));
+ document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.n===s||(s==='asistente'&&a.dataset.n==='asistentes')||(s==='guia'&&a.dataset.n==='guias')));scrollTo(0,0)}
+addEventListener('hashchange',route);
+
+$('#perfiles').innerHTML=Object.entries(PERF).map(([k,v])=>`<button class="of" onclick="go('diagnostico/${k}')"><b>${v.n}</b><span>${v.d}</span></button>`).join('');
+
+/* Diagnóstico */
+let D={p:null,i:0,r:{}};
+function renderDiag(p){if(p&&p!==D.p){D={p,i:0,r:{}}}if(!D.p){D.p='auto'}
+ const qs=preguntas(D.p),q=qs[D.i];const pct=Math.round(D.i/qs.length*100);
+ $('#diag').innerHTML=`<button class="back" onclick="${D.i?'D.i--;renderDiag()':"go('inicio')"}">← Volver</button>
+ <p class="k" style="margin-top:12px">${PERF[D.p].n} · Pregunta ${D.i+1} de ${qs.length}</p><div class="bar"><i style="width:${pct}%"></i></div>
+ <h2>${q.t}</h2>${q.o.map(([v,t])=>`<button class="of ${D.r[q.id]===v?'sel':''}" onclick="resp('${q.id}','${v}')"><b style="font-size:1rem;font-family:inherit">${t}</b></button>`).join('')}`}
+function resp(id,v){D.r[id]=v;const qs=preguntas(D.p);if(D.i<qs.length-1){D.i++;renderDiag()}else{LS.set('diag',{p:D.p,r:D.r});LS.set('hechos',[]);go('plan')}}
+
+/* Plan */
+function armarPlan(p,r){const S=[],add=(t,d,min,a)=>{if(!S.find(x=>x.t===t))S.push({t,d,min,a})};
+ const novato=r.ia==='0'||r.ia==='1';
+ if(novato)add('Hacé tu primera consulta a una IA','Abrí Gemini o ChatGPT gratis y pedile algo de tu día a día. Te dejamos el texto para copiar y pegar.','15 min',null);
+ const at=AREF[r.tiempo];
+ const tt={msj:['Dejá de contestar lo mismo por WhatsApp','Armá respuestas rápidas para las 4 preguntas que más te hacen.'],agenda:['Ordená tu agenda de la semana','Bloques fijos para trabajo, traslados y papeles.'],papeles:['Poné al día facturas y papeles','Una rutina de 30 minutos por semana para facturar y archivar.'],presu:['Presupuestá en 5 minutos','Una plantilla de presupuesto que se completa sola con tus precios.'],stock:['Controlá stock y pedidos','Una planilla simple que te avisa qué reponer.'],redes:['Resolvé las redes del mes en una hora','Planificá 4 posteos de una sola vez.'],compras:['Planificá comidas y compras','Menú semanal y lista por góndola, con ofertas.'],tramites:['Sacate de encima los trámites pendientes','Lista de qué pedir, dónde, y mensajes listos.'],org:['Armá la semana tipo','Bloques para cada uno, con recordatorios.'],cuentas:['Ordená cuentas y vencimientos','Calendario de vencimientos y débitos automáticos revisados.'],mails:['Escribí mails en la mitad del tiempo','Pedile a la IA borradores y resúmenes de reuniones.'],informes:['Automatizá tus informes','Que la IA te arme el resumen a partir de tus datos.'],aprender:['Aprendé con un tutor personal','Usá la IA para que te explique un tema con ejemplos de tu trabajo.']}[r.tiempo];
+ if(tt)add(tt[0],tt[1],'30 a 45 min',at);
+ const pl={nose:['Descubrí en qué se te va la plata','Cargá tus gastos de un mes en la calculadora y mirá qué sobra.','gastos'],precios:['Calculá tu precio por hora real','Con lo que querés ganar y tus gastos, sin adivinar.','precio'],impuestos:['Revisá tu categoría de monotributo','Sumá lo facturado en 12 meses y compará con la tabla.','mono'],fijos:['Recortá gastos fijos','Revisá servicios, planes y suscripciones que podés bajar.','gastos'],super:['Bajá el gasto del súper','Tope semanal y menú armado con ofertas.','gastos'],servicios:['Encontrá suscripciones que no usás','Revisá el resumen de la tarjeta línea por línea con la IA.','gastos'],deudas:['Armá un plan para la tarjeta','Qué pagar primero y cómo dejar de financiar.','gastos'],tarjeta:['Armá un plan para la tarjeta','Qué pagar primero y cómo dejar de financiar.','gastos'],extra:['Elegí un ingreso extra posible','Ideas según lo que ya sabés hacer, con precio estimado.','precio'],ahorro:['Empezá a ahorrar el 10%','Separalo apenas cobrás, antes de gastar.','gastos']}[r.plata];
+ if(pl)add(pl[0],pl[1],'20 min',pl[2]);
+ if(r.mono==='duda'||r.mono==='atras')add(r.mono==='atras'?'Ponete al día con el monotributo':'Confirmá tu categoría de monotributo','Te mostramos qué mirar en ARCA y cuándo te toca recategorizar. Datos de ejemplo: confirmá con tu contador.','30 min','mono');
+ const mt={clientes:['Conseguí tus primeras 10 reseñas','Completá Google Maps y pedí reseñas con un mensaje listo.','clientes'],ganar:['Actualizá tus precios','Comunicá el aumento sin perder clientes.','precio'],tiempo:['Recuperá 3 horas por semana','Automatizá una tarea repetida.','tiempo'],orden:['Armá tu carpeta de papeles','Qué guardar y dónde, en el celular.','tramites'],ahorrar:['Fijá una meta de ahorro','Un monto chico, automático, todos los meses.','gastos'],extra:['Probá vender lo que sabés hacer','Un anuncio y un precio para arrancar este mes.','clientes'],ascenso:['Actualizá tu CV con la IA','Que lo adapte a cada búsqueda.','tramites']}[r.meta];
+ if(mt)add(mt[0],mt[1],'1 hora',mt[2]);
+ let max=r.horas==='1'?3:r.horas==='2'?4:5;return S.slice(0,Math.max(3,max))}
+const EJ={salud:'Ejemplo: una médica con consultorio usa el paso de WhatsApp para turnos y obras sociales (sin guardar datos de pacientes).',contable:'Ejemplo: un contador usa estos pasos para avisar vencimientos a sus clientes y conseguir nuevos.',oficio:'Ejemplo: un electricista usa estos pasos para presupuestar desde el celular y juntar reseñas en Google.',servicio:'Ejemplo: una peluquera usa estos pasos para llenar los días flojos con una promo.'};
+function renderPlan(){const d=LS.get('diag',null);if(!d){$('#planbox').innerHTML='<h1>Todavía no tenés plan</h1><p class="lead">Hacé el diagnóstico y en 2 minutos lo tenés.</p><button class="btn w" onclick="go(\'inicio\')">Empezar</button>';return}
+ const S=armarPlan(d.p,d.r),h=LS.get('hechos',[]),n=S.filter(s=>h.includes(s.t)).length,simple=d.r.ia==='0'||d.r.ia==='1';
+ $('#planbox').innerHTML=`<p class="k">Tu plan · ${PERF[d.p].n}</p><h1>${S.length} pasos para empezar</h1>
+ <p class="lead">${simple?'Vamos despacio y con lenguaje simple. Cada paso se hace en un rato.':'Pasos concretos, ordenados por impacto.'}</p>
+ <p class="meta">${n} de ${S.length} hechos</p><div class="bar"><i style="width:${n/S.length*100}%"></i></div>
+ ${S.map((s,i)=>`<label class="step ${h.includes(s.t)?'done':''}"><input type="checkbox" ${h.includes(s.t)?'checked':''} onchange="marcar(${JSON.stringify(s.t).replace(/"/g,'&quot;')})"><div><h3>${i+1}. ${s.t}</h3><p>${s.d}</p><p class="meta">${s.min} · ${s.a?`<a href="#asistente/${s.a}" onclick="event.stopPropagation()">Asistente ${AS[s.a].n} →</a>`:'<a href="#guia/1" onclick="event.stopPropagation()">Guía: tu primera charla →</a>'}</p></div></label>`).join('')}
+ ${d.r.oficio?`<p class="mut"><i>${EJ[d.r.oficio]}</i></p>`:''}
+ ${n===S.length?'<div class="card"><b>Terminaste el plan.</b> <span class="mut">Volvé a hacer el diagnóstico para el siguiente objetivo.</span></div>':''}
+ <p><button class="btn o w" onclick="go('diagnostico/${d.p}')">Rehacer el diagnóstico</button></p>
+ <p><button class="btn w" onclick="go('opinion')">¿Lo usarías? Contanos</button></p>`}
+function marcar(t){let h=LS.get('hechos',[]);h=h.includes(t)?h.filter(x=>x!==t):[...h,t];LS.set('hechos',h);renderPlan()}
+
+/* Asistentes */
+function renderAList(){$('#alist').innerHTML=Object.entries(AS).map(([k,a])=>`<button class="of" onclick="go('asistente/${k}')"><b>${a.n}</b><span>${a.d}</span></button>`).join('')+'<div class="ad">Espacio publicitario</div>'}
+function calcHTML(c){if(c==='hora')return`<div class="card calc"><h3>Calculadora de precio por hora</h3>
+ <label>Lo que querés ganar por mes ($)<input id="c1" type="number" value="1200000"></label><label>Gastos del trabajo por mes ($)<input id="c2" type="number" value="250000"></label><label>Horas que cobrás por mes<input id="c3" type="number" value="100"></label>
+ <p class="mut" style="margin:8px 0 0">Tu hora debería salir</p><div class="out" id="co"></div></div>`;
+ if(c==='gastos')return`<div class="card calc"><h3>Calculadora de gastos del mes</h3>
+ <label>Ingresos del mes ($)<input id="c1" type="number" value="1800000"></label><label>Alquiler o cuota ($)<input id="c2" type="number" value="550000"></label><label>Servicios e internet ($)<input id="c3" type="number" value="180000"></label><label>Supermercado ($)<input id="c4" type="number" value="650000"></label><label>Otros (transporte, colegio…) ($)<input id="c5" type="number" value="300000"></label>
+ <p class="mut" style="margin:8px 0 0">Te queda libre</p><div class="out" id="co"></div><p class="mut" id="co2"></p></div>`;
+ if(c==='mono')return`<div class="card calc"><h3>¿En qué categoría estarías? <span class="tag">datos de ejemplo</span></h3>
+ <label>Facturado en los últimos 12 meses ($)<input id="c1" type="number" value="9800000"></label><div class="out" id="co"></div><p class="mut" id="co2">Topes ilustrativos, no oficiales. Confirmá en ARCA.</p></div>`;return''}
+const fm=n=>'$'+Math.round(n).toLocaleString('es-AR');
+const TOPES=[['A',6e6],['B',8.5e6],['C',11e6],['D',14e6],['E',17e6],['F',21e6],['G',25e6],['H',38e6],['I',43e6],['J',49e6],['K',58e6]];
+function calc(c){const v=i=>+($('#c'+i)?.value||0);
+ if(c==='hora'){$('#co').textContent=v(3)>0?fm((v(1)+v(2))/v(3)):'—'}
+ if(c==='gastos'){const l=v(1)-v(2)-v(3)-v(4)-v(5);$('#co').textContent=fm(l);$('#co2').textContent=l<0?'Gastás más de lo que entra. Empezá por el súper y los servicios.':'Si apartás el 10% de tus ingresos ('+fm(v(1)*.1)+') '+(l>=v(1)*.1?'te alcanza.':'te faltan '+fm(v(1)*.1-l)+'.')}
+ if(c==='mono'){const t=TOPES.find(x=>v(1)<=x[1]);$('#co').textContent=t?'Categoría '+t[0]+' (hasta '+fm(t[1])+')':'Superás el tope: consultá a un contador'}}
+function renderA(k){const a=AS[k]||AS.mono,simple=(LS.get('diag',{r:{}}).r.ia||'0')<'2';
+ $('#abox').innerHTML=`<button class="back" onclick="go('asistentes')">← Asistentes</button><p class="k" style="margin-top:12px">Asistente</p><h1>${a.n}</h1><p class="lead">${a.d}</p>
+ <p class="mut"><span class="tag">conversación de ejemplo</span> Las respuestas son fijas, para mostrar cómo funcionaría.</p>
+ <div class="chat" id="chat">${a.chat.filter(m=>m[0]!=='s'||simple).map(m=>`<div class="m ${m[0]}">${m[0]==='s'?'<b>Explicado fácil.</b> ':''}${m[1]}</div>`).join('')}</div>
+ <div class="sug">${Object.keys(a.sug).map(s=>`<button onclick="sug('${k}',this.textContent)">${s}</button>`).join('')}</div>
+ ${a.calc?calcHTML(a.calc):''}<div class="ad">Espacio publicitario</div>`;
+ if(a.calc){calc(a.calc);document.querySelectorAll('.calc input').forEach(i=>i.oninput=()=>calc(a.calc))}}
+function sug(k,s){const c=$('#chat');c.insertAdjacentHTML('beforeend',`<div class="m u">${s}</div><div class="m b">${AS[k].sug[s]}</div>`);c.lastElementChild.scrollIntoView({behavior:'smooth',block:'center'})}
+
+/* Guías */
+function renderG(){$('#glist').innerHTML=GUIAS.map((g,i)=>`<div class="card" style="cursor:pointer" onclick="go('guia/${i}')"><h3>${g[0]}</h3><p class="mut" style="margin:0">${g[2]}</p><p class="meta">Lectura de ${g[1]} · gratis</p></div>${i===2?'<div class="ad">Espacio publicitario</div>':''}`).join('')}
+function renderGuia(i){const g=GUIAS[i]||GUIAS[0];$('#gbox').innerHTML=`<button class="back" onclick="go('guias')">← Guías</button><p class="k" style="margin-top:12px">Guía · ${g[1]}</p><h1>${g[0]}</h1><p class="lead">${g[2]}</p>
+ ${i===1?`<div class="card"><b>Copiá y pegá esto en Gemini o ChatGPT:</b><p style="font-family:Georgia,serif">"Soy [tu trabajo o situación]. Quiero [lo que necesitás]. Explicámelo en lenguaje simple y en pasos cortos. Si te falta información, preguntame antes de responder."</p></div>`:''}
+ <p class="mut">El contenido completo de esta guía está en preparación. Es un prototipo.</p><div class="ad">Espacio publicitario</div><button class="btn w" onclick="go('inicio')">Hacer mi diagnóstico</button>`}
+
+/* Opinión */
+const OP={};
+document.querySelectorAll('[data-g]').forEach(g=>g.querySelectorAll('button').forEach(b=>b.onclick=()=>{g.querySelectorAll('button').forEach(x=>{x.style.background='#fff';x.style.color='var(--ink)'});b.style.background='var(--ac)';b.style.color='#fff';OP[g.dataset.g]=b.textContent}));
+function guardarOp(){OP.com=$('#com').value.trim();OP.fecha=new Date().toISOString();const d=LS.get('diag',null);if(d)OP.perfil=PERF[d.p].n;
+ const all=LS.get('opiniones',[]);all.push({...OP});LS.set('opiniones',all);
+ const t=`Hola Agus, probé Fontium.\n¿Lo usaría? ${OP.usa||'-'}\n¿Cuánto pagaría por mes? ${OP.paga||'-'}${OP.perfil?'\nPerfil: '+OP.perfil:''}${OP.com?'\nComentario: '+OP.com:''}`;
+ $('#wa').href='https://wa.me/?text='+encodeURIComponent(t);$('#opok').style.display='block'}
+route();
+</script></body></html>
